@@ -27,7 +27,55 @@ Topics covered:
 ##  PDF generation
 ## Runtime errors
 ## Jinja
+### Global variables
+Unfortiannely Jinja does not support global variables. The below example shows the issue:
+```jinja2
+{% set sum = 0 %}
+{{ sum }} {# sum = 0 #}
 
+{% for i in range(1,6) %}  
+	{% set sum = sum +  i %}  
+{% endfor %}
+
+{{ sum }} {# sum = 0 instead of 15 #}
+```
+**There are two ways around this limitation:**
+ 1. **Using namespace (Added in version 2.10)**
+	 1.1 Example 1: summing numbers in a loop 
+	```jinja2
+	{% set global_var = namespace(sum=0) %}  
+	{{ global_var.sum }} {# sum = 0 #}
+
+	{% for i in range(1,6) %}  
+	    {% set global_var.sum = i + global_var.sum %}  
+	{% endfor %}
+
+	{{ global_var.sum }} {# sum = 15 #}
+	```
+	 1.2 Example 2: global flag 
+	```jinja2
+	{% set global_var = namespace(flag=false) %}  
+	  
+	{% for i in range(1,6) %}  
+	    {% if i == 4 %}  
+	        {% set global_var.flag=true %}  
+	    {% endif %}  
+	{% endfor %}  
+	  
+	{% if global_var.flag %} 4 was found! {% endif %} {# Condition is true #}
+	```
+> Added in version 2.10
+ 2. **Using global list**
+```jinja2
+{% set global_list = [] %}  
+{{ global_list }} {# global_list = [] #}  
+
+{% for i in range(1,6) %}  
+    {% if global_list.append(i) %}{% endif %}  
+{% endfor %}  
+  
+{{ global_list }} {# global_list = [1, 2, 3, 4, 5] #}
+```
 ## Resources you will benifit from
  - YouTube channels
 	 -  [Corey Schafer](https://www.youtube.com/c/Coreyms)
