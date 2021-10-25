@@ -21,7 +21,7 @@ Topics covered:
 	 - PermissionError: [Errno 13] Permission denied
 	 - OSError: [Errno 48] Address already in use
  - [Jinja](#Jinja)
-	 - Global variables
+	 - [Global variables](#Global-variables)
 
 ## Database connections
 ##  PDF generation
@@ -40,7 +40,7 @@ Unfortiannely Jinja does not support global variables. The below example shows t
 {{ sum }} {# sum = 0 instead of 15 #}
 ```
 **There are two ways around this limitation:**
- 1. **Using namespace (Added in version 2.10)**
+ 1. **Using namespace:**
 	 1.1 Example 1: summing numbers in a loop 
 	```jinja2
 	{% set global_var = namespace(sum=0) %}  
@@ -65,7 +65,7 @@ Unfortiannely Jinja does not support global variables. The below example shows t
 	{% if global_var.flag %} 4 was found! {% endif %} {# Condition is true #}
 	```
 > Added in version 2.10
- 2. **Using global list**
+ 2. **Using global list:**
 ```jinja2
 {% set global_list = [] %}  
 {{ global_list }} {# global_list = [] #}  
