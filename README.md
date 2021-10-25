@@ -4,7 +4,7 @@ This repo is a collection for the issues I faced when I started learning Flask.
 It's meant to help beginners avoid the HELL of trying to solve problems at the start of learning a new framework.
 
 Topics covered:
- - Database connections
+ - Database connection
 	 - SQLAlchemy
 		 - Installation
 		 - db.create_all()
@@ -22,6 +22,12 @@ Topics covered:
 	 - OSError: [Errno 48] Address already in use
  - Jinja
 	 - Global variables
+
+## Database connections
+##  PDF generation
+## Runtime errors
+## Jinja
+
 ## Resources you will benifit from
  - YouTube channels
 	 -  [Corey Schafer](https://www.youtube.com/c/Coreyms)
