@@ -3,7 +3,7 @@
 </div>
 
 ## FLASK Challenges
-This repo is a collection for the issues I faced when I started learning Flask.
+This repo is a collection of the issues I faced when I started learning Flask.
 
 It's meant to help beginners avoid the HELL of trying to solve problems at the start of learning a new framework.
 
