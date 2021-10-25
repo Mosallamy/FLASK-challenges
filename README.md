@@ -4,7 +4,7 @@ This repo is a collection for the issues I faced when I started learning Flask.
 It's meant to help beginners avoid the HELL of trying to solve problems at the start of learning a new framework.
 
 Topics covered:
- - Database connection
+ - [Database connection](#Database-connections)
 	 - SQLAlchemy
 		 - Installation
 		 - db.create_all()
