@@ -11,16 +11,16 @@ Topics covered:
 		 - Data not updated
 	 - MySQL
 		 - Installation
- - PDF generation
+ - [PDF generation](#PDF-generation)
 	 - WKHTMLTOPDF
 		 - Installation
 		 - Deployment
 	 - PdfKit
 		 - not rendering image
- - Runtime errors
+ - [Runtime errors](#Runtime-errors)
 	 - PermissionError: [Errno 13] Permission denied
 	 - OSError: [Errno 48] Address already in use
- - Jinja
+ - [Jinja](#Jinja)
 	 - Global variables
 
 ## Database connections
